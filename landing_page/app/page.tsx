@@ -151,29 +151,92 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mission & Values */}
+      {/* Mission & Values - Redesigned */}
       <section className="max-w-7xl mx-auto px-6 py-28">
-        {/* (unchanged) */}
-      </section>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-black">
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">Mission & Values</span>
+          </h2>
+          <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+            Founded in Mulund, Mumbai, HM Pharmaceuticals was built on the belief that pediatric care deserves precision, compassion, and trust.
+          </p>
+        </div>
 
-      {/* Quality */}
-      <section id="quality" className="max-w-7xl mx-auto px-6 py-24">
-        <h2 className="text-4xl font-extrabold text-center mb-14">Quality & Certifications</h2>
-        <div className="grid md:grid-cols-3 gap-10 text-center">
-          {["FSSAI", "GMP", "PURE"].map((q, i) => (
+        <div className="grid md:grid-cols-3 gap-10">
+          {[
+            {
+              title: "Our Mission",
+              text: "To provide premium-quality pediatric liquid medicines that balance safety, efficacy, and affordability."
+            },
+            {
+              title: "Our Vision",
+              text: "To become a trusted global benchmark in pediatric pharmaceutical innovation and safety."
+            },
+            {
+              title: "Our Values",
+              text: "Integrity, scientific excellence, and compassionate care guide every formulation we create."
+            }
+          ].map((item, i) => (
             <motion.div
               key={i}
-              whileHover={{ y: -6 }}
-              className="p-10 rounded-3xl bg-slate-900 text-white shadow-xl hover:shadow-cyan-500/30 transition"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.15 }}
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="relative group p-10 rounded-3xl bg-white/70 backdrop-blur-xl border border-slate-200 shadow-xl hover:shadow-cyan-300/40 transition-all"
             >
-              <h3 className="text-3xl font-black text-cyan-400">{q}</h3>
-              <p className="mt-3 text-slate-300 text-sm">
-                Highest manufacturing and pediatric safety standards.
+              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 blur-xl group-hover:opacity-20 transition" />
+
+              <h3 className="relative text-2xl font-extrabold text-slate-900 mb-4">
+                {item.title}
+              </h3>
+              <p className="relative text-slate-600 leading-relaxed">
+                {item.text}
               </p>
             </motion.div>
           ))}
         </div>
       </section>
+      
+      {/* Quality */}
+<section
+  id="quality"
+  className="relative max-w-7xl mx-auto px-6 py-28 text-center"
+>
+  <h2 className="text-4xl md:text-5xl font-extrabold mb-16">
+    Quality & Certification
+  </h2>
+
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    transition={{ type: "spring", stiffness: 200 }}
+    className="relative mx-auto w-full max-w-xl"
+  >
+    {/* Glow background */}
+    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 blur-3xl rounded-full"></div>
+
+    {/* Card */}
+    <div className="relative rounded-3xl p-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500">
+      <div className="rounded-3xl bg-slate-900 px-12 py-16">
+        
+        <h3 className="text-5xl font-black text-cyan-400 tracking-wide">
+          FSSAI
+        </h3>
+
+        <p className="mt-6 text-slate-300 text-lg leading-relaxed">
+          Certified for maintaining the highest standards in food safety,
+          quality control, and pediatric nutritional manufacturing.
+        </p>
+
+        {/* Optional badge line */}
+        <div className="mt-8 text-sm text-cyan-300 font-semibold tracking-widest">
+          GOVERNMENT APPROVED • TRUSTED • SAFE
+        </div>
+      </div>
+    </div>
+  </motion.div>
+</section>
 
       {/* Contact */}
       <section id="contact" className="max-w-7xl mx-auto px-6 py-24">
