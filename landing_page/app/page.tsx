@@ -251,7 +251,7 @@ export default function Home() {
 
         <p className="mt-6 text-slate-300 text-lg leading-relaxed">
           Certified for maintaining the highest standards in food safety,
-          quality control, and pediatric nutritional manufacturing.
+          quality control, and pediatric nutrition.
         </p>
 
         {/* Optional badge line */}
