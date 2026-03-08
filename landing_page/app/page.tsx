@@ -3,6 +3,15 @@
 import Image from "next/image";
 import { motion } from "framer-motion"
 import Link from "next/link";
+import { Mail, Phone, MapPin } from "lucide-react";
+import { Pill, Stethoscope, HeartPulse, FlaskConical } from "lucide-react";
+
+const formulations = [
+  { name: "Antipyretic", icon: HeartPulse },
+  { name: "Respiratory", icon: Stethoscope },
+  { name: "Supplements", icon: FlaskConical },
+  { name: "Antibiotic", icon: Pill },
+];
 
 export default function Home() {
   return (
@@ -12,7 +21,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
             <Image src="/images/logo.png" alt="HM Pharmaceuticals" width={44} height={44} />
-            <span className="font-extrabold text-xl tracking-tight">HM Pharmaceuticals</span>
+            <span className="font-extrabold text-xl tracking-tight">HM Pharmaceuticals LLP</span>
           </div>
           <nav className="hidden md:flex gap-8 text-sm font-semibold">
             <a href="#about" className="hover:text-cyan-600 transition">About</a>
@@ -29,7 +38,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 px-6 py-28 items-center">
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="inline-block mb-4 px-4 py-1 rounded-full bg-cyan-100 text-cyan-700 text-xs font-semibold tracking-wide">
-              FSSAI Licensed • WHO-GMP Certified
+              FSSAI Licensed
             </span>
 
             <h1 className="text-4xl md:text-6xl font-black leading-tight">
@@ -54,7 +63,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}>
-            <Image src="/images/hero.jpg" alt="Healthcare" width={520} height={420} className="rounded-[2.5rem] shadow-2xl" />
+            <Image src="/images/hero.png" alt="Healthcare" width={520} height={420} className="rounded-[2.5rem] shadow-2xl" />
           </motion.div>
         </div>
       </section>
@@ -124,32 +133,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Formulations */}
-      <section id="formulations" className="max-w-7xl mx-auto px-6 py-24">
-        <div className="text-center mb-14">
-          <h2 className="text-4xl font-extrabold">Featured Formulations</h2>
-          <p className="text-slate-500 mt-3">Our most trusted pediatric solutions</p>
-        </div>
+      
 
-        <div className="grid md:grid-cols-4 gap-8">
-          {["Antipyretic", "Respiratory", "Supplements", "Antibiotic"].map((cat, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -6, scale: 1.01 }}
-              className="p-8 rounded-3xl bg-white shadow-lg hover:shadow-cyan-300/30 transition border"
-            >
-              <span className="text-xs font-semibold uppercase tracking-wide text-cyan-600">{cat}</span>
-              <h3 className="mt-3 text-xl font-bold">Premium Pediatric Care</h3>
-              <p className="mt-2 text-slate-600 text-sm">
-                Formulated for safety, taste, and clinical effectiveness.
-              </p>
-              <Link href="/products" className="inline-block mt-4 text-cyan-600 font-semibold">
-                View Products →
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      {/* Featured Formulations */}
+<section id="formulations" className="max-w-7xl mx-auto px-6 py-24">
+
+  <div className="text-center mb-16">
+    <h2 className="text-4xl font-extrabold">
+      Featured <span className="text-cyan-600">Formulations</span>
+    </h2>
+    <p className="text-slate-500 mt-3">
+      Explore our key pediatric therapeutic categories
+    </p>
+  </div>
+
+  <div className="grid md:grid-cols-4 gap-8">
+
+    {formulations.map((item, i) => {
+      const Icon = item.icon;
+
+      return (
+        <Link key={i} href="/products">
+
+          <motion.div
+            whileHover={{ y: -6, scale: 1.03 }}
+            className="group cursor-pointer p-10 rounded-3xl bg-white border shadow-md hover:shadow-cyan-300/30 transition flex flex-col items-center text-center"
+          >
+            <div className="mb-5 p-4 rounded-full bg-cyan-100 text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition">
+              <Icon size={30} />
+            </div>
+
+            <h3 className="text-lg font-semibold text-slate-800 group-hover:text-cyan-600 transition">
+              {item.name}
+            </h3>
+
+          </motion.div>
+
+        </Link>
+      );
+    })}
+
+  </div>
+</section>
 
       {/* Mission & Values - Redesigned */}
       <section className="max-w-7xl mx-auto px-6 py-28">
@@ -238,17 +263,76 @@ export default function Home() {
   </motion.div>
 </section>
 
-      {/* Contact */}
-      <section id="contact" className="max-w-7xl mx-auto px-6 py-24">
-        <h2 className="text-4xl font-extrabold mb-10 text-center">Contact Us</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {["contact@hmpharma.com", "+91 98765 43210", "Mumbai, Maharashtra"].map((info, i) => (
-            <div key={i} className="p-8 rounded-3xl bg-white shadow-md hover:shadow-cyan-300/30 transition text-center">
-              <p className="font-semibold text-slate-700">{info}</p>
-            </div>
-          ))}
+      
+
+{/* Contact */}
+<section id="contact" className="bg-slate-50 py-24">
+  <div className="max-w-7xl mx-auto px-6">
+
+    <h2 className="text-4xl font-extrabold mb-14 text-center">
+      Contact <span className="text-cyan-600">Us</span>
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-10">
+
+      {/* Address */}
+      <div className="p-8 rounded-3xl bg-white shadow-md hover:shadow-cyan-300/30 transition text-center flex flex-col items-center">
+        <div className="mb-4 p-3 rounded-full bg-cyan-100 text-cyan-600">
+          <MapPin size={28} />
         </div>
-      </section>
+
+        <h3 className="font-semibold text-lg mb-2">Office Address</h3>
+
+        <p className="text-slate-600 text-sm leading-relaxed">
+          Gala No. 109, KK Gupta Industrial Estate<br/>
+          Jawahar Talkies, Mulund West<br/>
+          Mumbai – 400080
+        </p>
+
+        <a
+          href="https://maps.google.com/?q=KK+Gupta+Industrial+Estate+Mulund+West+Mumbai"
+          target="_blank"
+          className="mt-4 text-cyan-600 text-sm font-semibold hover:underline"
+        >
+          View on Map
+        </a>
+      </div>
+
+      {/* Phone */}
+      <div className="p-8 rounded-3xl bg-white shadow-md hover:shadow-cyan-300/30 transition text-center flex flex-col items-center">
+        <div className="mb-4 p-3 rounded-full bg-cyan-100 text-cyan-600">
+          <Phone size={28} />
+        </div>
+
+        <h3 className="font-semibold text-lg mb-2">Phone</h3>
+
+        <a
+          href="tel:+919323137664"
+          className="text-slate-700 font-medium hover:text-cyan-600 transition"
+        >
+          +91 9323137664
+        </a>
+      </div>
+
+      {/* Email */}
+      <div className="p-8 rounded-3xl bg-white shadow-md hover:shadow-cyan-300/30 transition text-center flex flex-col items-center">
+        <div className="mb-4 p-3 rounded-full bg-cyan-100 text-cyan-600">
+          <Mail size={28} />
+        </div>
+
+        <h3 className="font-semibold text-lg mb-2">Email</h3>
+
+        <a
+          href="mailto:hmpharmaceuticalsmulund@gmail.com"
+          className="text-slate-700 font-medium hover:text-cyan-600 transition"
+        >
+          hmpharmaceuticalsmulund@gmail.com
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-10 text-center">
