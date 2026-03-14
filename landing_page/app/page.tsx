@@ -227,102 +227,104 @@ export default function Home() {
       {/* Quality */}
 <section
   id="quality"
-  className="relative max-w-7xl mx-auto px-6 py-28 text-center overflow-hidden"
+  className="max-w-7xl mx-auto px-6 py-28 text-center"
 >
-  {/* soft background glow */}
-  <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(circle_at_20%_30%,#0ea5e9,transparent_40%),radial-gradient(circle_at_80%_70%,#6366f1,transparent_40%)]"></div>
-
-  <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
-    Quality & Certification
+  <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-slate-900">
+    Quality & Certifications
   </h2>
 
   <p className="max-w-2xl mx-auto text-slate-500 mb-16 text-lg">
-    Our manufacturing and product quality adhere to globally recognized
-    safety and compliance standards ensuring reliability and trust.
+    Our products follow strict regulatory and quality standards to
+    ensure safety, reliability, and global compliance.
   </p>
 
-  <div className="grid md:grid-cols-3 gap-10">
+  <div className="grid gap-10 md:grid-cols-3">
 
     {/* FSSAI */}
-    <motion.div
-      whileHover={{ y: -10 }}
-      transition={{ type: "spring", stiffness: 200 }}
-      className="group relative rounded-3xl"
-    >
-      <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 opacity-0 group-hover:opacity-100 blur-md transition duration-500"></div>
+    <div className="bg-white rounded-3xl border border-slate-200 shadow-md p-10 flex flex-col items-center text-center">
 
-      <div className="relative bg-slate-900 rounded-3xl px-10 py-14 border border-slate-700 shadow-xl">
-
-        <h3 className="text-4xl font-black text-cyan-400 tracking-wide">
-          FSSAI
-        </h3>
-
-        <p className="mt-6 text-slate-300 text-base leading-relaxed">
-          Certified by the Food Safety and Standards Authority of India,
-          ensuring strict compliance with national food safety and
-          quality regulations for pediatric healthcare products.
-        </p>
-
-        <div className="mt-8 text-xs text-cyan-300 font-semibold tracking-widest">
-          GOVERNMENT APPROVED • SAFE • TRUSTED
-        </div>
-
+      {/* Badge */}
+      <div className="w-16 h-16 flex items-center justify-center rounded-full bg-cyan-50 text-cyan-600 text-xl font-bold">
+        ✓
       </div>
-    </motion.div>
+
+      <h3 className="mt-6 text-2xl font-bold text-slate-900">
+        FSSAI
+      </h3>
+
+      <p className="text-sm text-slate-500 mt-1">
+        Food Safety and Standards Authority of India
+      </p>
+
+      <div className="w-10 h-[2px] bg-cyan-400 my-6"></div>
+
+      <p className="text-slate-600 text-sm leading-relaxed">
+        Ensures compliance with national food safety regulations,
+        maintaining strict standards for safe and reliable healthcare
+        formulations.
+      </p>
+
+      <span className="mt-6 text-xs font-semibold text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full">
+        Government Approved
+      </span>
+
+    </div>
 
     {/* MSME */}
-    <motion.div
-      whileHover={{ y: -10 }}
-      transition={{ type: "spring", stiffness: 200 }}
-      className="group relative rounded-3xl"
-    >
-      <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-r from-purple-400 via-indigo-500 to-blue-500 opacity-0 group-hover:opacity-100 blur-md transition duration-500"></div>
+    <div className="bg-white rounded-3xl border border-slate-200 shadow-md p-10 flex flex-col items-center text-center">
 
-      <div className="relative bg-slate-900 rounded-3xl px-10 py-14 border border-slate-700 shadow-xl">
-
-        <h3 className="text-4xl font-black text-indigo-400 tracking-wide">
-          MSME
-        </h3>
-
-        <p className="mt-6 text-slate-300 text-base leading-relaxed">
-          Registered under the MSME framework supporting innovation,
-          responsible manufacturing, and sustainable growth within
-          India's pharmaceutical and healthcare ecosystem.
-        </p>
-
-        <div className="mt-8 text-xs text-indigo-300 font-semibold tracking-widest">
-          CERTIFIED • COMPLIANT • RECOGNIZED
-        </div>
-
+      <div className="w-16 h-16 flex items-center justify-center rounded-full bg-indigo-50 text-indigo-600 text-xl font-bold">
+        ✓
       </div>
-    </motion.div>
+
+      <h3 className="mt-6 text-2xl font-bold text-slate-900">
+        MSME
+      </h3>
+
+      <p className="text-sm text-slate-500 mt-1">
+        Micro, Small & Medium Enterprises
+      </p>
+
+      <div className="w-10 h-[2px] bg-indigo-400 my-6"></div>
+
+      <p className="text-slate-600 text-sm leading-relaxed">
+        Recognized under the MSME framework supporting innovation,
+        sustainable manufacturing, and responsible industry practices.
+      </p>
+
+      <span className="mt-6 text-xs font-semibold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">
+        Government Recognized
+      </span>
+
+    </div>
 
     {/* FDA */}
-    <motion.div
-      whileHover={{ y: -10 }}
-      transition={{ type: "spring", stiffness: 200 }}
-      className="group relative rounded-3xl"
-    >
-      <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-r from-blue-400 via-cyan-500 to-teal-500 opacity-0 group-hover:opacity-100 blur-md transition duration-500"></div>
+    <div className="bg-white rounded-3xl border border-slate-200 shadow-md p-10 flex flex-col items-center text-center">
 
-      <div className="relative bg-slate-900 rounded-3xl px-10 py-14 border border-slate-700 shadow-xl">
-
-        <h3 className="text-4xl font-black text-blue-400 tracking-wide">
-          FDA
-        </h3>
-
-        <p className="mt-6 text-slate-300 text-base leading-relaxed">
-          Adhering to internationally recognized safety and regulatory
-          practices aligned with global pharmaceutical standards
-          governed by the Food and Drug Administration.
-        </p>
-
-        <div className="mt-8 text-xs text-blue-300 font-semibold tracking-widest">
-          GLOBAL STANDARD • SAFE • VERIFIED
-        </div>
-
+      <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 text-xl font-bold">
+        ✓
       </div>
-    </motion.div>
+
+      <h3 className="mt-6 text-2xl font-bold text-slate-900">
+        FDA
+      </h3>
+
+      <p className="text-sm text-slate-500 mt-1">
+        Food and Drug Administration
+      </p>
+
+      <div className="w-10 h-[2px] bg-blue-400 my-6"></div>
+
+      <p className="text-slate-600 text-sm leading-relaxed">
+        Aligns with internationally recognized pharmaceutical safety
+        standards ensuring global regulatory compliance.
+      </p>
+
+      <span className="mt-6 text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+        Global Standard
+      </span>
+
+    </div>
 
   </div>
 </section>
